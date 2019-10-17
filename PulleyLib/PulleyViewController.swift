@@ -175,7 +175,6 @@ public enum PulleySnapMode {
     case nearestPositionUnlessExceeded(threshold: CGFloat)
 }
 
-private let kPulleyDefaultCollapsedHeight: CGFloat = 0.0
 private let kPulleyDefaultPartialRevealHeight: CGFloat = 264.0
 
 open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDelegate {
@@ -499,6 +498,8 @@ open class PulleyViewController: UIViewController, PulleyDrawerViewControllerDel
     
     // The feedback generator to use for drawer positon changes. Note: This is 'Any' to preserve iOS 9 compatibilty. Assign a UIFeedbackGenerator to this property. Anything else will be ignored.
     public var feedbackGenerator: Any?
+
+    public var kPulleyDefaultCollapsedHeight: CGFloat = 68.0
     
     /// Access to the safe areas that Pulley is using for layout (provides compatibility for iOS < 11)
     public var pulleySafeAreaInsets: UIEdgeInsets {
